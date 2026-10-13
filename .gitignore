@@ -1,0 +1,31 @@
+# === Python Operating Artifacts ===
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# === Python Virtual Environments ===
+.venv/
+venv/
+ENV/
+env/
+ENV/
+
+# === Development Tools & IDEs ===
+.ipynb_checkpoints/
+.pytest_cache/
+.vscode/
+.idea/
+
+# === Windows System Files ===
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# === Environment Variables & Secrets ===
+.env
+.secrets
+
+# === Personal Project Files ===
+commit-message.txt

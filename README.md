@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="img/logo.png" alt="sunlapse: one vertical stripe per captured day, warm at the horizon, with the real annual sunset-time curve traced across them" width="520">
+</p>
+
 # sunlapse
 
 One frame a day, a fixed number of minutes before sunset, stitched into a
@@ -5,6 +9,14 @@ video. Runs on a Raspberry Pi with a camera module pointed out of a window.
 
 Standard library Python plus `ffmpeg` and `rpicam-still`. No API key, no
 hosted service, no network at capture time.
+
+*The curve in the logo is not decoration. It is the real sunset time for 45
+degrees north across a year, computed by the same forty lines in
+`capture.py` that decide when to take the picture. Each stripe is a day.
+The stripe colors, for now, are an invented seasonal palette. Once the
+lapse has run a while, `tools/make_logo.py --source frames` regenerates it
+using the actual horizon color of every captured evening, which turns it
+from a picture of the idea into a portrait of the data.*
 
 ## Why sunset-relative and not a clock time
 
