@@ -1,0 +1,23 @@
+Add type hints and Sphinx docstrings throughout
+
+Both modules now carry full annotations and :param:/:returns: docstrings.
+Types are left to the annotations rather than repeated as :type: lines.
+
+Annotating the signatures surfaced a few things worth fixing while they
+were visible:
+
+- main() in both modules takes an optional argv instead of reaching into
+  sys.argv directly, so it can be called from a test.
+- make_video.py: build_command() and parse_args() are separate functions
+  rather than inline in main(), which is what made main()'s own return
+  type legible.
+- make_video.py: the concat listfile is removed in a finally block, so a
+  failed encode no longer leaves .frames.txt behind.
+- A Gap alias for the (before, after, missing_days) tuple, which was the
+  one return type that needed a name to be readable.
+- The NOAA solar variables are spelled out: mean_long, mean_anom,
+  eccentricity, center, var_y. Single letters match the published
+  algorithm and are no help in a file that gets read once a year.
+
+No behavior changes. Verified against status, dry run, gap detection and
+both encode styles.
